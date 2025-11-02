@@ -1,0 +1,26 @@
+version: '3.8'
+services:
+  driver-db:
+    image: mysql:8.0
+    container_name: driver-db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: driverdb
+    ports:
+      - "3306:3306"
+    volumes:
+      - driver_data:/var/lib/mysql
+  driver-service:
+    build: .
+    container_name: driver-service
+    ports:
+      - "8089:8081"
+    depends_on:
+      - driver-db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://driver-db:3306/driverdb
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+
+volumes:
+  driver_data:
