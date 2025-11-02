@@ -28,4 +28,6 @@ public interface DriverService {
 	 
 	 public Driver findActiveDriver();
 	 
+	 public void deleteDriver(Long driverId);
+	 
 }

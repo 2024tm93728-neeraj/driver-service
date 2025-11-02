@@ -82,4 +82,15 @@ public class DriverController {
     	
         return ResponseEntity.ok(new ApiResponse<>(true, "Driver canceled the trip", service.cancelTrip(driverId, tripId)));
     }
+    
+    @DeleteMapping("/{driverId}")
+    public ResponseEntity<ApiResponse<Boolean>> deleteDriver(
+            @PathVariable("driverId") Long driverId) {
+
+        service.deleteDriver(driverId);
+        return ResponseEntity.ok(
+                new ApiResponse<>(true, "Driver deleted successfully", true)
+        );
+    }
+
 }

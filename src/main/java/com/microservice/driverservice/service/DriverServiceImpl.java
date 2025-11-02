@@ -111,4 +111,13 @@ public class DriverServiceImpl implements DriverService{
 
         return cancelled;
     }
+    @Override
+    public void deleteDriver(Long driverId) {
+
+        Driver driver = repo.findById(driverId)
+                .orElseThrow(() -> new ResourceNotFoundException("Driver not found with id: " + driverId));
+
+        repo.delete(driver);
+    }
+
 }
