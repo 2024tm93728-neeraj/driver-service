@@ -99,17 +99,14 @@
 
   </dependencies>
 
-	
   <build>
     <plugins>
-		
-
       <!-- Spring Boot Maven Plugin -->
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
         <configuration>
-          <mainClass>com.example.driverservice.DriverServiceApplication</mainClass>
+          <mainClass>com.microservice.driverservice.DriverServiceApplication</mainClass>
         </configuration>
       </plugin>
     </plugins>
