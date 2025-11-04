@@ -7,7 +7,8 @@ import feign.httpclient.ApacheHttpClient;
 
 @Configuration
 public class FeignConfig {
-	@Bean
+
+    @Bean
     public ApacheHttpClient apacheHttpClient() {
         return new ApacheHttpClient();
     }
